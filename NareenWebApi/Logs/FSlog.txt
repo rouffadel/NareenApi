@@ -641,3 +641,5 @@ Error Number:18456,State:1,Class:14
 22-04-2022 00:25:37:{Info} 22-04-2022 00:25:37 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Montly_BalnceSheet_Reports 2022 - Method Executed.
 22-04-2022 00:26:22:{Info} 22-04-2022 00:26:22 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Montly_BalnceSheet_Reports 2 - Method Executed.
 22-04-2022 00:27:18:{Info} 22-04-2022 00:27:18 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Montly_BalnceSheet_Reports 2 - Method Executed.
+24-04-2022 12:16:25:{Info} 24-04-2022 12:16:25 - FS_Helper.INSERTRECORDS - SPNAME -Sp_HallBookSheet_Reports 2 - Method Executed.
+24-04-2022 12:16:50:{Info} 24-04-2022 12:16:50 - FS_Helper.INSERTRECORDS - SPNAME -Sp_HallBookSheet_Reports 2 - Method Executed.
