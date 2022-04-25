@@ -14,6 +14,12 @@ namespace NareenWebApi.Dtos
         public decimal DebitAmt { get; set; }
         public decimal Diff { get; set; }
     }
+    public class HallWiseCount
+    {
+        public int TotalCount { get; set; }
+        public string HallName { get; set; }
+        public int HallId { get; set; }
+    }
     public class BookingMonthlySheet
     {
         public string HallName { get; set; }

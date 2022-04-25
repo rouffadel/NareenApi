@@ -643,3 +643,7 @@ Error Number:18456,State:1,Class:14
 22-04-2022 00:27:18:{Info} 22-04-2022 00:27:18 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Montly_BalnceSheet_Reports 2 - Method Executed.
 24-04-2022 12:16:25:{Info} 24-04-2022 12:16:25 - FS_Helper.INSERTRECORDS - SPNAME -Sp_HallBookSheet_Reports 2 - Method Executed.
 24-04-2022 12:16:50:{Info} 24-04-2022 12:16:50 - FS_Helper.INSERTRECORDS - SPNAME -Sp_HallBookSheet_Reports 2 - Method Executed.
+25-04-2022 22:38:07:{Info} 25-04-2022 22:38:07 - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByDate - Method Executed.
+25-04-2022 22:38:22:{Info} 25-04-2022 22:38:22 - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByDate - Method Executed.
+25-04-2022 22:38:56:{Info} 25-04-2022 22:38:56 - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByDate - Method Executed.
+25-04-2022 22:39:13:{Info} 25-04-2022 22:39:13 - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByHallId  - Method Executed.

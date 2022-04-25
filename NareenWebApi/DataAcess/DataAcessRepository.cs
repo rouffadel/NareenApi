@@ -117,6 +117,77 @@ namespace NareenWebApi.DataAcess
             throw new NotImplementedException();
         }
 
+        public object GetHallWiseCountByDate()
+        {
+
+            ArrayList arrayList3 = new ArrayList();
+            arrayList3.Add(DateTime.Now.AddDays(1));
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByDate - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_gethallwise", arrayList3.ToArray());
+            List<HallWiseCount> BSE = new List<HallWiseCount>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                HallWiseCount BS = new HallWiseCount();
+                BS.HallName = ds3.Tables[0].Rows[i]["HallName"].ToString();
+                BS.HallId = Convert.ToInt32(ds3.Tables[0].Rows[i]["Id"]);
+                BS.TotalCount = Convert.ToInt32(ds3.Tables[0].Rows[i]["TotalCount"]);
+              
+                BSE.Add(BS);
+            }
+
+            return BSE;
+
+        }
+
+        public object GetHallWiseCountByHallId(int HallId)
+        {
+
+            ArrayList arrayList3 = new ArrayList();
+            arrayList3.Add(DateTime.Now.AddDays(1));
+            arrayList3.Add(HallId);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByHallId  - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_gethallwisebyhallid", arrayList3.ToArray());
+            List<BookingMonthlySheet> BSE = new List<BookingMonthlySheet>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                BookingMonthlySheet BS = new BookingMonthlySheet();
+                BS.HallName = ds3.Tables[0].Rows[i]["HallName"].ToString();
+                BS.BookingId = Convert.ToInt32(ds3.Tables[0].Rows[i]["Id"]);
+                BS.AdditionalAmount = Convert.ToString(ds3.Tables[0].Rows[i]["AdditionalAmount"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["AdditionalAmount"]);
+                //BS.AdminRemark= Convert.ToString(ds3.Tables[0].Rows[i]["AdminRemark"]);
+                BS.Amount = Convert.ToString(ds3.Tables[0].Rows[i]["Amount"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["Amount"]);
+                BS.Balance = Convert.ToString(ds3.Tables[0].Rows[i]["Balance"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["Balance"]);
+                BS.CateringAmount = Convert.ToString(ds3.Tables[0].Rows[i]["CateringAmount"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["CateringAmount"]);
+                BS.CateringFinalAmt = Convert.ToString(ds3.Tables[0].Rows[i]["CateringFinalAmt"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["CateringFinalAmt"]);
+                BS.CateringGST = Convert.ToString(ds3.Tables[0].Rows[i]["CateringGST"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["CateringGST"]);
+                BS.CateringTaxAmount = Convert.ToString(ds3.Tables[0].Rows[i]["CateringTaxAmount"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["CateringTaxAmount"]);
+                BS.CateringUploadMenu = Convert.ToString(ds3.Tables[0].Rows[i]["CateringUploadMenu"]);
+                BS.Costperplate = Convert.ToInt32(ds3.Tables[0].Rows[i]["Costperplate"]);
+                BS.CreatedDate = Convert.ToDateTime(ds3.Tables[0].Rows[i]["CreatedDate"]);
+                BS.CustomerAddress = Convert.ToString(ds3.Tables[0].Rows[i]["CustomerAddress"]);
+                BS.CustomerMobileNo = Convert.ToString(ds3.Tables[0].Rows[i]["CustomerMobileNo"]);
+                BS.CustomerName = Convert.ToString(ds3.Tables[0].Rows[i]["CustomerName"]);
+                BS.Description = Convert.ToString(ds3.Tables[0].Rows[i]["Description"]);
+                BS.Discount = Convert.ToString(ds3.Tables[0].Rows[i]["Discount"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["Discount"]);
+                BS.DiscountByAdmin = Convert.ToString(ds3.Tables[0].Rows[i]["DiscountByAdmin"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["DiscountByAdmin"]);
+                BS.FinalAmount = Convert.ToString(ds3.Tables[0].Rows[i]["FinalAmount"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["FinalAmount"]);
+                BS.FunctionDate = Convert.ToDateTime(ds3.Tables[0].Rows[i]["FunctionDate"]);
+                BS.FunctionTitle = Convert.ToString(ds3.Tables[0].Rows[i]["FunctionTitle"]);
+                BS.GST = Convert.ToString(ds3.Tables[0].Rows[i]["GST"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["GST"]);
+                BS.Guestcount = Convert.ToInt32(ds3.Tables[0].Rows[i]["Guestcount"]);
+                BS.HallId = Convert.ToInt32(ds3.Tables[0].Rows[i]["HallId"]);
+                BS.IsCatering = Convert.ToBoolean(ds3.Tables[0].Rows[i]["IsCatering"]);
+                BS.Muhurtham = Convert.ToString(ds3.Tables[0].Rows[i]["Muhurtham"]);
+                BS.TaxableAmount = Convert.ToString(ds3.Tables[0].Rows[i]["TaxableAmount"]) == "" ? 0 : Convert.ToDecimal(ds3.Tables[0].Rows[i]["TaxableAmount"]);
+                BS.TimeName = Convert.ToString(ds3.Tables[0].Rows[i]["TimeName"]);
+                BS.TimeValue = Convert.ToInt32(ds3.Tables[0].Rows[i]["TimeValue"]);
+                BSE.Add(BS);
+            }
+
+            return BSE;
+
+        }
+
         public object GetBookingMonthlyDetails(int MonthID, int year)
         {
 

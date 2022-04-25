@@ -131,5 +131,38 @@ namespace NareenWebApi.Controllers
             }
 
         }
+
+        [Route("GetHallWiseCountByDate")]
+        [HttpGet]
+        public IHttpActionResult GetHallWiseCountByDate()
+        {
+            try
+            {
+                var employeeDto = _dataAcessRepository.GetHallWiseCountByDate();
+                return Ok(employeeDto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
+        [Route("GetHallWiseCountByHallId")]
+        [HttpGet]
+        public IHttpActionResult GetHallWiseCountByHallId(int HallId)
+        {
+            try
+            {
+                var employeeDto = _dataAcessRepository.GetHallWiseCountByHallId(HallId);
+                return Ok(employeeDto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
     }
 }
