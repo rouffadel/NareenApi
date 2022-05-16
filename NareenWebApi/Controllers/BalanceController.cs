@@ -148,6 +148,8 @@ namespace NareenWebApi.Controllers
             }
 
         }
+
+
         [Route("GetHallWiseCountByHallId")]
         [HttpGet]
         public IHttpActionResult GetHallWiseCountByHallId(int HallId)
@@ -155,6 +157,23 @@ namespace NareenWebApi.Controllers
             try
             {
                 var employeeDto = _dataAcessRepository.GetHallWiseCountByHallId(HallId);
+                return Ok(employeeDto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
+
+        [Route("SaveDevice")]
+        [HttpPost]
+        public IHttpActionResult SaveDevice(SaveDevice model)
+        {
+            try
+            {
+                var employeeDto = _dataAcessRepository.SaveDevice(model);
                 return Ok(employeeDto);
             }
             catch (Exception ex)

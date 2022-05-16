@@ -5,6 +5,10 @@ using System.Web;
 
 namespace NareenWebApi.Dtos
 {
+    public class SaveDevice
+    {
+        public string DeviceId { get; set; }
+    }
     public class BalanceSheet
     {
         public string Name { get; set; }

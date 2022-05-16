@@ -139,6 +139,19 @@ namespace NareenWebApi.DataAcess
 
         }
 
+        public object SaveDevice(SaveDevice model)
+        {
+
+            ArrayList arrayList3 = new ArrayList();
+            arrayList3.Add(model.DeviceId);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -SaveDevice  - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_SaveDevice", arrayList3.ToArray());
+          
+
+            return "Saved Successfully";
+
+        }
+
         public object GetHallWiseCountByHallId(int HallId)
         {
 
