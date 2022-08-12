@@ -78,4 +78,67 @@ namespace NareenWebApi.Dtos
         public decimal DebitAmt { get; set; }
         public decimal Diff { get; set; }
     }
+    public class HallPaymentYearly
+    {
+        public string MonthName { get; set; }
+        public string TotalAmount { get; set; }
+        public string Collected { get; set; }
+        public string Balance { get; set; }
+    }
+    public class HallPaymentMonthly
+    {
+        public string HallName { get; set; }
+        public string TotalAmount { get; set; }
+        public string Collected { get; set; }
+        public string Balance { get; set; }
+    }
+    public class HallPaymentdetails
+    {
+        public DateTime PaymentDate { get; set; }
+        public string CustomerName { get; set; }
+        public string AmountPaid { get; set; }
+        public string Balance { get; set; }
+    }
+    public class RoyalityPaymentYearly
+    {
+        public string MonthName { get; set; }
+        public string Amount_Received { get; set; }
+        public string Decoration { get; set; }
+        public string CookingWater { get; set; }
+        public string LandScape { get; set; }
+        public string Power { get; set; }
+        public string LED { get; set; }
+        public string Shehnai { get; set; }
+        public string Rooms { get; set; }
+        public string Sofa { get; set; }
+        public string Others { get; set; }
+    }
+    public class RoyalityPaymentMonthly
+    {
+        public string HallName { get; set; }
+        public string Amount_Received { get; set; }
+        public string Decoration { get; set; }
+        public string CookingWater { get; set; }
+        public string LandScape { get; set; }
+        public string Power { get; set; }
+        public string LED { get; set; }
+        public string Shehnai { get; set; }
+        public string Rooms { get; set; }
+        public string Sofa { get; set; }
+        public string Others { get; set; }
+    }
+    public class RoyalityPaymentdetails
+    {
+        public DateTime PaymentDate { get; set; }
+        public string Amount_Received { get; set; }
+        public string Decoration { get; set; }
+        public string CookingWater { get; set; }
+        public string LandScape { get; set; }
+        public string Power { get; set; }
+        public string LED { get; set; }
+        public string Shehnai { get; set; }
+        public string Rooms { get; set; }
+        public string Sofa { get; set; }
+        public string Others { get; set; }
+    }
 }

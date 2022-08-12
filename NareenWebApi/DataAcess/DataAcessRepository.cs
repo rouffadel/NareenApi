@@ -1,5 +1,6 @@
 ﻿using Fadel.EmailComponent;
 using NareenWebApi.Dtos;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -307,5 +308,154 @@ namespace NareenWebApi.DataAcess
         {
             throw new NotImplementedException();
         }
+
+        public object GetHallPaymentYearWise(int year)
+        {
+
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(year);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments " + year + " - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_Yearly_HallPayments", arrayList.ToArray());
+            List<HallPaymentYearly> HallPayY = new List<HallPaymentYearly>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                HallPaymentYearly HPY = new HallPaymentYearly();
+                HPY.MonthName   = ds3.Tables[0].Rows[i]["monthname"].ToString();
+                HPY.TotalAmount = ds3.Tables[0].Rows[i]["totalamount"].ToString();
+                HPY.Collected   = ds3.Tables[0].Rows[i]["collected"].ToString();
+                HPY.Balance     = ds3.Tables[0].Rows[i]["balance"].ToString();
+                //BS.NoOfBookings = Convert.ToInt32(ds3.Tables[0].Rows[i]["bookings"]);
+                HallPayY.Add(HPY);
+            }
+
+            return HallPayY;
+
+        }
+
+        public object GetHallPaymentMonthWise(string MonthName,int year)
+        {
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(MonthName);
+            arrayList.Add(year);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPayments " + MonthName + " - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_Monthly_HallPayments", arrayList.ToArray());
+            List<HallPaymentMonthly> HallPayM = new List<HallPaymentMonthly>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                HallPaymentMonthly HPM = new HallPaymentMonthly();
+                HPM.HallName    = ds3.Tables[0].Rows[i]["HallName"].ToString();
+                HPM.TotalAmount = ds3.Tables[0].Rows[i]["totalamount"].ToString();
+                HPM.Collected   = ds3.Tables[0].Rows[i]["collected"].ToString();
+                HPM.Balance     = ds3.Tables[0].Rows[i]["balance"].ToString();
+                HallPayM.Add(HPM);
+            }
+
+            return HallPayM;
+
+        }
+
+        public object GetHallPaymentdtls(string MonthName, int HallId)
+        {
+
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(MonthName);
+            arrayList.Add(HallId);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails " + HallId + " - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_Monthly_HallPaymentDetails", arrayList.ToArray());
+            List<HallPaymentdetails> HallPayD = new List<HallPaymentdetails>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                HallPaymentdetails HPD = new HallPaymentdetails();
+                HPD.PaymentDate  = Convert.ToDateTime(ds3.Tables[0].Rows[i]["PaymentDate"]);
+                HPD.CustomerName = ds3.Tables[0].Rows[i]["CustomerName"].ToString();
+                HPD.AmountPaid   = ds3.Tables[0].Rows[i]["collected"].ToString();
+                HPD.Balance      = ds3.Tables[0].Rows[i]["balance"].ToString();
+                HallPayD.Add(HPD);
+            }
+            return HallPayD;
+        }
+
+        public object GetRoyalityPaymentYearWise(int year)
+        {
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(year);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -sp_Yearly_Royality " + year + " - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_Yearly_Royality", arrayList.ToArray());
+            List<RoyalityPaymentYearly> RoyalityPayY = new List<RoyalityPaymentYearly>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                RoyalityPaymentYearly RPY = new RoyalityPaymentYearly();
+                RPY.MonthName = ds3.Tables[0].Rows[i]["monthname"].ToString();
+                RPY.Amount_Received = ds3.Tables[0].Rows[i]["Total"].ToString();
+                RPY.Decoration = ds3.Tables[0].Rows[i]["Decoration"].ToString();
+                RPY.CookingWater = ds3.Tables[0].Rows[i]["Cooking Water"].ToString();
+                RPY.LandScape = ds3.Tables[0].Rows[i]["LandScape"].ToString();
+                RPY.Power = ds3.Tables[0].Rows[i]["Power"].ToString();
+                RPY.LED = ds3.Tables[0].Rows[i]["LED"].ToString();
+                RPY.Shehnai = ds3.Tables[0].Rows[i]["Shehnai"].ToString();
+                RPY.Rooms = ds3.Tables[0].Rows[i]["Rooms"].ToString();
+                RPY.Sofa = ds3.Tables[0].Rows[i]["Sofa"].ToString();
+                RPY.Others = ds3.Tables[0].Rows[i]["Others"].ToString();
+                RoyalityPayY.Add(RPY);
+            }
+            return RoyalityPayY;
+
+        }
+        public object GetRoyalityPaymentMonthWise(string MonthName, int year)
+        {
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(MonthName);
+            arrayList.Add(year);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -sp_Monthly_Royality " + year + " - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_Monthly_Royality", arrayList.ToArray());
+            List<RoyalityPaymentMonthly> RoyalityPayM = new List<RoyalityPaymentMonthly>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                RoyalityPaymentMonthly RPM = new RoyalityPaymentMonthly();
+                RPM.HallName = ds3.Tables[0].Rows[i]["HallName"].ToString();
+                RPM.Amount_Received = ds3.Tables[0].Rows[i]["Total"].ToString();
+                RPM.Decoration = ds3.Tables[0].Rows[i]["Decoration"].ToString();
+                RPM.CookingWater = ds3.Tables[0].Rows[i]["Cooking Water"].ToString();
+                RPM.LandScape = ds3.Tables[0].Rows[i]["LandScape"].ToString();
+                RPM.Power = ds3.Tables[0].Rows[i]["Power"].ToString();
+                RPM.LED = ds3.Tables[0].Rows[i]["LED"].ToString();
+                RPM.Shehnai = ds3.Tables[0].Rows[i]["Shehnai"].ToString();
+                RPM.Rooms = ds3.Tables[0].Rows[i]["Rooms"].ToString();
+                RPM.Sofa = ds3.Tables[0].Rows[i]["Sofa"].ToString();
+                RPM.Others = ds3.Tables[0].Rows[i]["Others"].ToString();
+                RoyalityPayM.Add(RPM);
+            }
+            return RoyalityPayM;
+        }
+        public object GetRoyalityPaymentdtls(int HallId,string MonthName)
+        {
+
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(HallId);
+            arrayList.Add(MonthName);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails " + HallId + " - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_RoyalityDetails", arrayList.ToArray());
+            List<RoyalityPaymentdetails> RoyalityPayD = new List<RoyalityPaymentdetails>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                RoyalityPaymentdetails RPD = new RoyalityPaymentdetails();
+                RPD.PaymentDate = Convert.ToDateTime(ds3.Tables[0].Rows[i]["PaymentDate"]);
+                RPD.Amount_Received = ds3.Tables[0].Rows[i]["Total"].ToString();
+                RPD.Decoration = ds3.Tables[0].Rows[i]["Decoration"].ToString();
+                RPD.CookingWater = ds3.Tables[0].Rows[i]["Cooking Water"].ToString();
+                RPD.LandScape = ds3.Tables[0].Rows[i]["LandScape"].ToString();
+                RPD.Power = ds3.Tables[0].Rows[i]["Power"].ToString();
+                RPD.LED = ds3.Tables[0].Rows[i]["LED"].ToString();
+                RPD.Shehnai = ds3.Tables[0].Rows[i]["Shehnai"].ToString();
+                RPD.Rooms = ds3.Tables[0].Rows[i]["Rooms"].ToString();
+                RPD.Sofa = ds3.Tables[0].Rows[i]["Sofa"].ToString();
+                RPD.Others = ds3.Tables[0].Rows[i]["Others"].ToString();
+                RoyalityPayD.Add(RPD);
+            }
+
+            return RoyalityPayD;
+
+        }
+
     }
 }

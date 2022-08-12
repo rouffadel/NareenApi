@@ -647,3 +647,51 @@ Error Number:18456,State:1,Class:14
 25-04-2022 22:38:22:{Info} 25-04-2022 22:38:22 - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByDate - Method Executed.
 25-04-2022 22:38:56:{Info} 25-04-2022 22:38:56 - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByDate - Method Executed.
 25-04-2022 22:39:13:{Info} 25-04-2022 22:39:13 - FS_Helper.INSERTRECORDS - SPNAME -GetHallWiseCountByHallId  - Method Executed.
+11-08-2022 12:08:04:{Info} 11-08-2022 12:08:04 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 14:15:32:{Info} 11-08-2022 14:15:32 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 14:17:35:{Info} 11-08-2022 14:17:35 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 14:19:48:{Info} 11-08-2022 14:19:48 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports hall - Method Executed.
+11-08-2022 14:22:26:{Info} 11-08-2022 14:22:26 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports hall - Method Executed.
+11-08-2022 14:24:42:{Info} 11-08-2022 14:24:42 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports hall - Method Executed.
+11-08-2022 14:25:28:{Info} 11-08-2022 14:25:28 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 14:29:44:{Info} 11-08-2022 14:29:44 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 14:31:09:{Info} 11-08-2022 14:31:09 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports hallname - Method Executed.
+11-08-2022 16:28:05:{Info} 11-08-2022 16:28:05 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 16:31:09:{Info} 11-08-2022 16:31:09 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 16:53:19:{Info} 11-08-2022 16:53:19 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_BookingReports 2022 - Method Executed.
+11-08-2022 18:00:44:{Info} 11-08-2022 18:00:44 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails Nareen Palace - Method Executed.
+11-08-2022 18:01:37:{Info} 11-08-2022 18:01:37 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails Narenn Palace - Method Executed.
+11-08-2022 18:40:23:{Info} 11-08-2022 18:40:23 - FS_Helper.INSERTRECORDS - SPNAME -sp_Yearly_Royality 2022 - Method Executed.
+11-08-2022 19:17:36:{Info} 11-08-2022 19:17:36 - FS_Helper.INSERTRECORDS - SPNAME -sp_Yearly_Royality 2022 - Method Executed.
+11-08-2022 19:20:12:{Info} 11-08-2022 19:20:12 - FS_Helper.INSERTRECORDS - SPNAME -sp_Yearly_Royality 2022 - Method Executed.
+12-08-2022 11:34:29:{Info} 12-08-2022 11:34:29 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPayments August - Method Executed.
+12-08-2022 11:35:41:{Info} 12-08-2022 11:35:41 - FS_Helper.INSERTRECORDS - SPNAME -sp_Yearly_Royality 2022 - Method Executed.
+12-08-2022 12:18:23:{Info} 12-08-2022 12:18:23 - FS_Helper.INSERTRECORDS - SPNAME -sp_Monthly_Royality 2022 - Method Executed.
+12-08-2022 12:19:08:{Info} 12-08-2022 12:19:08 - FS_Helper.INSERTRECORDS - SPNAME -sp_Monthly_Royality 2022 - Method Executed.
+12-08-2022 12:22:47:{Info} 12-08-2022 12:22:47 - FS_Helper.INSERTRECORDS - SPNAME -sp_Monthly_Royality 2022 - Method Executed.
+12-08-2022 13:09:39:{Info} 12-08-2022 13:09:39 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Palace - Method Executed.
+12-08-2022 13:10:21:{Info} 12-08-2022 13:10:21 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Palace - Method Executed.
+12-08-2022 13:10:46:{Info} 12-08-2022 13:10:46 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Convention - Method Executed.
+12-08-2022 13:17:08:{Info} 12-08-2022 13:17:08 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Convention - Method Executed.
+12-08-2022 13:17:51:{Info} 12-08-2022 13:17:51 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Convention - Method Executed.
+12-08-2022 13:20:03:{Info} 12-08-2022 13:20:03 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Palace - Method Executed.
+12-08-2022 13:20:34:{Info} 12-08-2022 13:20:34 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Jewel - Method Executed.
+12-08-2022 13:22:12:{Info} 12-08-2022 13:22:12 - FS_Helper.INSERTRECORDS - SPNAME -sp_Monthly_Royality 2022 - Method Executed.
+12-08-2022 13:22:58:{Info} 12-08-2022 13:22:58 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Convention - Method Executed.
+12-08-2022 13:36:26:{Info} 12-08-2022 13:36:26 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Jewel - Method Executed.
+12-08-2022 13:48:46:{Info} 12-08-2022 13:48:46 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Nakshatra - Method Executed.
+12-08-2022 13:49:52:{Info} 12-08-2022 13:49:52 - FS_Helper.INSERTRECORDS - SPNAME -sp_Monthly_Royality 2022 - Method Executed.
+12-08-2022 14:04:42:{Info} 12-08-2022 14:04:42 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Nakshatra - Method Executed.
+12-08-2022 14:04:58:{Info} 12-08-2022 14:04:58 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Nakshatra - Method Executed.
+12-08-2022 14:06:15:{Info} 12-08-2022 14:06:15 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Nakshatra - Method Executed.
+12-08-2022 14:33:26:{Info} 12-08-2022 14:33:26 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Nakshatra - Method Executed.
+12-08-2022 14:33:38:{Info} 12-08-2022 14:33:38 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Palace - Method Executed.
+12-08-2022 14:35:42:{Info} 12-08-2022 14:35:42 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails Narenn Nakshatra - Method Executed.
+12-08-2022 14:42:02:{Info} 12-08-2022 14:42:02 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails 4 - Method Executed.
+12-08-2022 14:49:17:{Info} 12-08-2022 14:49:17 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails 4 - Method Executed.
+12-08-2022 14:49:41:{Info} 12-08-2022 14:49:41 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails 2 - Method Executed.
+12-08-2022 14:50:10:{Info} 12-08-2022 14:50:10 - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails 3 - Method Executed.
+12-08-2022 14:52:57:{Info} 12-08-2022 14:52:57 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails Narenn Nakshatra - Method Executed.
+12-08-2022 14:56:47:{Info} 12-08-2022 14:56:47 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails 1 - Method Executed.
+12-08-2022 14:57:01:{Info} 12-08-2022 14:57:01 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails 2 - Method Executed.
+12-08-2022 14:57:12:{Info} 12-08-2022 14:57:12 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails 3 - Method Executed.

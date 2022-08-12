@@ -183,5 +183,107 @@ namespace NareenWebApi.Controllers
             }
 
         }
+
+        [Route("GetHallPaymentYearly")]
+        [HttpGet]
+        public IHttpActionResult GetHallPaymentYearly(int year)
+        {
+            try
+            {
+                var PaymentYearly = _dataAcessRepository.GetHallPaymentYearWise(year);
+                return Ok(PaymentYearly);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
+
+        [Route("GetHallPaymentMonthly")]
+        [HttpGet]
+        public IHttpActionResult GetHallPaymentMonthly(string MonthName,int year)
+        {
+            try
+            {
+                var PaymentYearly = _dataAcessRepository.GetHallPaymentMonthWise(MonthName, year);
+                return Ok(PaymentYearly);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
+
+        [Route("GetHallPaymentDetails")]
+        [HttpGet]
+        public IHttpActionResult GetHallPaymentDetails(string MonthName, int HallId)
+        {
+            try
+            {
+                var PaymentYearly = _dataAcessRepository.GetHallPaymentdtls(MonthName, HallId);
+                return Ok(PaymentYearly);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
+
+        [Route("GetRoyalityPaymentYearly")]
+        [HttpGet]
+        public IHttpActionResult GetRoyalityPaymentYearly(int year)
+        {
+            try
+            {
+                var PaymentYearly = _dataAcessRepository.GetRoyalityPaymentYearWise(year);
+                return Ok(PaymentYearly);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
+
+        [Route("GetRoyalityPaymentMonthly")]
+        [HttpGet]
+        public IHttpActionResult GetRoyalityPaymentMonthly(string MonthName, int year)
+        {
+            try
+            {
+                var PaymentYearly = _dataAcessRepository.GetRoyalityPaymentMonthWise(MonthName, year);
+                return Ok(PaymentYearly);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
+
+        [Route("GetRoyalityPaymentDetails")]
+        [HttpGet]
+        public IHttpActionResult GetRoyalityPaymentDetails(int HallId, string MonthName)
+        {
+            try
+            {
+                var PaymentYearly = _dataAcessRepository.GetRoyalityPaymentdtls(HallId, MonthName);
+                return Ok(PaymentYearly);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
     }
 }
