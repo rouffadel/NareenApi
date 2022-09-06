@@ -183,6 +183,22 @@ namespace NareenWebApi.Controllers
             }
 
         }
+        [Route("GetHallPayment")]
+        [HttpGet]
+        public IHttpActionResult GetHallPayment()
+        {
+            try
+            {
+                var PaymentYearly = _dataAcessRepository.GetHallPayment();
+                return Ok(PaymentYearly);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
 
         [Route("GetHallPaymentYearly")]
         [HttpGet]
@@ -203,11 +219,11 @@ namespace NareenWebApi.Controllers
 
         [Route("GetHallPaymentMonthly")]
         [HttpGet]
-        public IHttpActionResult GetHallPaymentMonthly(string MonthName,int year)
+        public IHttpActionResult GetHallPaymentMonthly(int MonthId,int year)
         {
             try
             {
-                var PaymentYearly = _dataAcessRepository.GetHallPaymentMonthWise(MonthName, year);
+                var PaymentYearly = _dataAcessRepository.GetHallPaymentMonthWise(MonthId, year);
                 return Ok(PaymentYearly);
             }
             catch (Exception ex)
@@ -220,11 +236,11 @@ namespace NareenWebApi.Controllers
 
         [Route("GetHallPaymentDetails")]
         [HttpGet]
-        public IHttpActionResult GetHallPaymentDetails(string MonthName, int HallId)
+        public IHttpActionResult GetHallPaymentDetails(int HallId, int MonthId, int year)
         {
             try
             {
-                var PaymentYearly = _dataAcessRepository.GetHallPaymentdtls(MonthName, HallId);
+                var PaymentYearly = _dataAcessRepository.GetHallPaymentdtls(HallId, MonthId, year);
                 return Ok(PaymentYearly);
             }
             catch (Exception ex)
@@ -254,11 +270,11 @@ namespace NareenWebApi.Controllers
 
         [Route("GetRoyalityPaymentMonthly")]
         [HttpGet]
-        public IHttpActionResult GetRoyalityPaymentMonthly(string MonthName, int year)
+        public IHttpActionResult GetRoyalityPaymentMonthly(int MonthId, int year)
         {
             try
             {
-                var PaymentYearly = _dataAcessRepository.GetRoyalityPaymentMonthWise(MonthName, year);
+                var PaymentYearly = _dataAcessRepository.GetRoyalityPaymentMonthWise(MonthId, year);
                 return Ok(PaymentYearly);
             }
             catch (Exception ex)
@@ -271,11 +287,11 @@ namespace NareenWebApi.Controllers
 
         [Route("GetRoyalityPaymentDetails")]
         [HttpGet]
-        public IHttpActionResult GetRoyalityPaymentDetails(int HallId, string MonthName)
+        public IHttpActionResult GetRoyalityPaymentDetails(int HallId,int MonthId, int Year)
         {
             try
             {
-                var PaymentYearly = _dataAcessRepository.GetRoyalityPaymentdtls(HallId, MonthName);
+                var PaymentYearly = _dataAcessRepository.GetRoyalityPaymentdtls(HallId, MonthId, Year);
                 return Ok(PaymentYearly);
             }
             catch (Exception ex)

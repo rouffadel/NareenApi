@@ -308,6 +308,27 @@ namespace NareenWebApi.DataAcess
         {
             throw new NotImplementedException();
         }
+        public object GetHallPayment()
+        {
+
+            ArrayList arrayList = new ArrayList();
+            //arrayList.Add(year);
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments "+" - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_GetHallPayements", arrayList.ToArray());
+            List<HallPayment> HallPay = new List<HallPayment>();
+            for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            {
+                HallPayment HP = new HallPayment();
+                HP.TotalAmount = ds3.Tables[0].Rows[i]["totalamount"].ToString();
+                HP.Collected = ds3.Tables[0].Rows[i]["collected"].ToString();
+                HP.Balance = ds3.Tables[0].Rows[i]["balance"].ToString();
+                //BS.NoOfBookings = Convert.ToInt32(ds3.Tables[0].Rows[i]["bookings"]);
+                HallPay.Add(HP);
+            }
+
+            return HallPay;
+
+        }
 
         public object GetHallPaymentYearWise(int year)
         {
@@ -332,18 +353,19 @@ namespace NareenWebApi.DataAcess
 
         }
 
-        public object GetHallPaymentMonthWise(string MonthName,int year)
+        public object GetHallPaymentMonthWise(int MonthId,int year)
         {
             ArrayList arrayList = new ArrayList();
-            arrayList.Add(MonthName);
+            arrayList.Add(MonthId);
             arrayList.Add(year);
-            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPayments " + MonthName + " - Method Executed.");
+            clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPayments " + MonthId + " - Method Executed.");
             DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_Monthly_HallPayments", arrayList.ToArray());
             List<HallPaymentMonthly> HallPayM = new List<HallPaymentMonthly>();
             for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
             {
                 HallPaymentMonthly HPM = new HallPaymentMonthly();
                 HPM.HallName    = ds3.Tables[0].Rows[i]["HallName"].ToString();
+                HPM.HallId      = Convert.ToInt32(ds3.Tables[0].Rows[i]["HallId"].ToString());
                 HPM.TotalAmount = ds3.Tables[0].Rows[i]["totalamount"].ToString();
                 HPM.Collected   = ds3.Tables[0].Rows[i]["collected"].ToString();
                 HPM.Balance     = ds3.Tables[0].Rows[i]["balance"].ToString();
@@ -354,14 +376,14 @@ namespace NareenWebApi.DataAcess
 
         }
 
-        public object GetHallPaymentdtls(string MonthName, int HallId)
+        public object GetHallPaymentdtls(int HallId, int MonthId, int year)
         {
-
             ArrayList arrayList = new ArrayList();
-            arrayList.Add(MonthName);
             arrayList.Add(HallId);
+            arrayList.Add(MonthId);
+            arrayList.Add(year);
             clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails " + HallId + " - Method Executed.");
-            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_Monthly_HallPaymentDetails", arrayList.ToArray());
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_Monthly_HallPaymentDetailsNew", arrayList.ToArray());
             List<HallPaymentdetails> HallPayD = new List<HallPaymentdetails>();
             for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
             {
@@ -401,10 +423,10 @@ namespace NareenWebApi.DataAcess
             return RoyalityPayY;
 
         }
-        public object GetRoyalityPaymentMonthWise(string MonthName, int year)
+        public object GetRoyalityPaymentMonthWise(int MonthId, int year)
         {
             ArrayList arrayList = new ArrayList();
-            arrayList.Add(MonthName);
+            arrayList.Add(MonthId);
             arrayList.Add(year);
             clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -sp_Monthly_Royality " + year + " - Method Executed.");
             DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_Monthly_Royality", arrayList.ToArray());
@@ -413,6 +435,7 @@ namespace NareenWebApi.DataAcess
             {
                 RoyalityPaymentMonthly RPM = new RoyalityPaymentMonthly();
                 RPM.HallName = ds3.Tables[0].Rows[i]["HallName"].ToString();
+                RPM.HallId = Convert.ToInt32(ds3.Tables[0].Rows[i]["Hallid"].ToString());
                 RPM.Amount_Received = ds3.Tables[0].Rows[i]["Total"].ToString();
                 RPM.Decoration = ds3.Tables[0].Rows[i]["Decoration"].ToString();
                 RPM.CookingWater = ds3.Tables[0].Rows[i]["Cooking Water"].ToString();
@@ -427,14 +450,15 @@ namespace NareenWebApi.DataAcess
             }
             return RoyalityPayM;
         }
-        public object GetRoyalityPaymentdtls(int HallId,string MonthName)
+        public object GetRoyalityPaymentdtls(int HallId,int MonthId, int Year)
         {
 
             ArrayList arrayList = new ArrayList();
             arrayList.Add(HallId);
-            arrayList.Add(MonthName);
+            arrayList.Add(MonthId);
+            arrayList.Add(Year);
             clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -sp_RoyalityDetails " + HallId + " - Method Executed.");
-            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_RoyalityDetails", arrayList.ToArray());
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "sp_RoyalityDetailsNew", arrayList.ToArray());
             List<RoyalityPaymentdetails> RoyalityPayD = new List<RoyalityPaymentdetails>();
             for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
             {

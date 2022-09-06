@@ -296,8 +296,8 @@ E:\Git Projects\NareenApi\NareenWebApi\bin\Microsoft.Extensions.Options.xml
 E:\Git Projects\NareenApi\NareenWebApi\bin\System.Diagnostics.DiagnosticSource.xml
 E:\Git Projects\NareenApi\NareenWebApi\bin\System.Text.Encodings.Web.xml
 E:\Git Projects\NareenApi\NareenWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.csproj.AssemblyReference.cache
 E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.csproj.CoreCompileInputs.cache
 E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.csproj.CopyComplete
 E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.dll
 E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.pdb
+E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.csproj.AssemblyReference.cache

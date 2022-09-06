@@ -78,6 +78,12 @@ namespace NareenWebApi.Dtos
         public decimal DebitAmt { get; set; }
         public decimal Diff { get; set; }
     }
+    public class HallPayment
+    {
+        public string TotalAmount { get; set; }
+        public string Collected { get; set; }
+        public string Balance { get; set; }
+    }
     public class HallPaymentYearly
     {
         public string MonthName { get; set; }
@@ -88,6 +94,7 @@ namespace NareenWebApi.Dtos
     public class HallPaymentMonthly
     {
         public string HallName { get; set; }
+        public int HallId { get; set; }
         public string TotalAmount { get; set; }
         public string Collected { get; set; }
         public string Balance { get; set; }
@@ -115,6 +122,7 @@ namespace NareenWebApi.Dtos
     }
     public class RoyalityPaymentMonthly
     {
+        public int HallId { get; set; }
         public string HallName { get; set; }
         public string Amount_Received { get; set; }
         public string Decoration { get; set; }
