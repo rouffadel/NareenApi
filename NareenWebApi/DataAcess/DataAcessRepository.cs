@@ -481,5 +481,28 @@ namespace NareenWebApi.DataAcess
 
         }
 
+        public object GetHallAmountAndRoyalities()
+        {
+            ArrayList arrayList = new ArrayList();
+            //arrayList.Add(year);
+            //clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments " + " - Method Executed.");
+            DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_GetHallPayements", arrayList.ToArray());
+            HallRotalityPayment HallroyalPay = new HallRotalityPayment();
+            //for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
+            //{
+                HallRotalityPayment HRP = new HallRotalityPayment();
+                HRP.HallAmountReceived = "2500";
+                HRP.HallBalanceAmount = "5200";
+                HRP.AllRoyalitiesReceived = "1000";
+                //HRP.HallAmountReceived = ds3.Tables[0].Rows[i]["totalamount"].ToString();
+                //HRP.HallBalanceAmount = ds3.Tables[0].Rows[i]["collected"].ToString();
+                //HRP.AllRoyalitiesReceived = ds3.Tables[0].Rows[i]["balance"].ToString();
+                //HallroyalPay.Add(HRP);
+            //}
+
+            return HRP;
+
+        }
+
     }
 }

@@ -301,5 +301,23 @@ namespace NareenWebApi.Controllers
             }
 
         }
+
+
+        [Route("GetHallAmountAndRoyalities")]
+        [HttpGet]
+        public IHttpActionResult GetHallAmountAndRoyalities()
+        {
+            try
+            {
+                var HallAmountAndRoyalities = _dataAcessRepository.GetHallAmountAndRoyalities();
+                return Ok(HallAmountAndRoyalities);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+                throw;
+            }
+
+        }
     }
 }

@@ -149,4 +149,12 @@ namespace NareenWebApi.Dtos
         public string Sofa { get; set; }
         public string Others { get; set; }
     }
+
+    public class HallRotalityPayment
+    {
+        public string HallAmountReceived { get; set; }
+        public string HallBalanceAmount { get; set; }
+        public string AllRoyalitiesReceived { get; set; }
+        //public string Balance { get; set; }
+    }
 }

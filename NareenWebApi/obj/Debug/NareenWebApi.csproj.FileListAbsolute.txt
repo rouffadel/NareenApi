@@ -300,4 +300,3 @@ E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.csproj.CoreCompile
 E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.csproj.CopyComplete
 E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.dll
 E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.pdb
-E:\Git Projects\NareenApi\NareenWebApi\obj\Debug\NareenWebApi.csproj.AssemblyReference.cache
