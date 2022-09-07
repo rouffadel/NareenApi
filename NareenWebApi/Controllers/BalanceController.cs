@@ -309,8 +309,29 @@ namespace NareenWebApi.Controllers
         {
             try
             {
-                var HallAmountAndRoyalities = _dataAcessRepository.GetHallAmountAndRoyalities();
-                return Ok(HallAmountAndRoyalities);
+                var result  = _dataAcessRepository.GetHallPaymentYearWise(DateTime.Now.Year);
+                var payments = (List<HallPaymentYearly>)result;
+                
+
+                long hallamtCollected = 0;
+                long hallBalance = 0;
+                long royaltypayment = 0;
+                foreach (var item in payments)
+                {
+                   hallamtCollected += Int64.Parse(item.Collected);
+                   hallBalance += Int64.Parse(item.Balance);  
+                }
+                var royalties = (List<RoyalityPaymentYearly>)_dataAcessRepository.GetRoyalityPaymentYearWise(DateTime.Now.Year);
+                foreach (var royalty in royalties)
+                {
+                    royaltypayment += Int64.Parse(royalty.Amount_Received);
+                     
+                }
+                HallRotalityPayment hallRotalityPayment = new HallRotalityPayment();
+                hallRotalityPayment.AllRoyalitiesReceived = royaltypayment.ToString();
+                hallRotalityPayment.HallAmountReceived = hallamtCollected.ToString();
+                hallRotalityPayment.HallBalanceAmount = hallBalance.ToString();
+                return Ok(hallRotalityPayment);
             }
             catch (Exception ex)
             {

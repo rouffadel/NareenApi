@@ -487,7 +487,7 @@ namespace NareenWebApi.DataAcess
             //arrayList.Add(year);
             //clsLog.WriteInfoLog("{Info} " + DateTime.Now + " - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments " + " - Method Executed.");
             DataSet ds3 = SqlHelper.ExecuteDataset(StrConnection, "Sp_GetHallPayements", arrayList.ToArray());
-            HallRotalityPayment HallroyalPay = new HallRotalityPayment();
+            //HallRotalityPayment HallroyalPay = new HallRotalityPayment();
             //for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
             //{
                 HallRotalityPayment HRP = new HallRotalityPayment();
