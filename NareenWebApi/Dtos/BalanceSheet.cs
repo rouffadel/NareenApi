@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -101,10 +102,43 @@ namespace NareenWebApi.Dtos
     }
     public class HallPaymentdetails
     {
+        private string _amountreceived = string.Empty;
+        private string _balance = string.Empty;
+
         public DateTime PaymentDate { get; set; }
         public string CustomerName { get; set; }
-        public string AmountPaid { get; set; }
-        public string Balance { get; set; }
+        public string AmountPaid {
+            get
+            {
+                if (string.IsNullOrEmpty(_amountreceived))
+                {
+                    _amountreceived = "0";
+
+                }
+                return Convert.ToDouble(_amountreceived).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _amountreceived = value;
+            }
+        }
+        public string Balance {
+            get
+            {
+                if (string.IsNullOrEmpty(_balance))
+                {
+                    _balance = "0";
+
+                }
+                return Convert.ToDouble(_balance).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _balance = value;
+            }
+        }
     }
     public class RoyalityPaymentYearly
     {
@@ -152,9 +186,53 @@ namespace NareenWebApi.Dtos
 
     public class HallRotalityPayment
     {
-        public string HallAmountReceived { get; set; }
-        public string HallBalanceAmount { get; set; }
-        public string AllRoyalitiesReceived { get; set; }
+        private string _hallamountreceived = string.Empty;
+        private string _hallbalance = string.Empty;
+        private string _hallroyalties= string.Empty;
+        public string HallAmountReceived { get { 
+                if(string.IsNullOrEmpty(_hallamountreceived))
+                {
+                    _hallamountreceived = "0";
+
+                }
+                return Convert.ToDouble(_hallamountreceived).ToString("N", new CultureInfo("hi-IN"));
+
+            } set {
+                _hallamountreceived = value;
+            }
+        }
+        public string HallBalanceAmount {
+            get
+            {
+                if (string.IsNullOrEmpty(_hallbalance))
+                {
+                    _hallbalance = "0";
+
+                }
+                return Convert.ToDouble(_hallbalance).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _hallbalance = value;
+            }
+        }
+        public string AllRoyalitiesReceived {
+            get
+            {
+                if (string.IsNullOrEmpty(_hallroyalties))
+                {
+                    _hallroyalties = "0";
+
+                }
+                return Convert.ToDouble(_hallroyalties).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _hallroyalties = value;
+            }
+        }
         //public string Balance { get; set; }
     }
 }
