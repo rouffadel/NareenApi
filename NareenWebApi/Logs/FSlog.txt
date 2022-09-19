@@ -761,3 +761,8 @@ Error Number:18456,State:1,Class:14
 15-09-2022 14:55:44:{Info} 15-09-2022 14:55:44 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Monthly_HallPaymentDetails 3 - Method Executed.
 15-09-2022 14:55:57:{Info} 15-09-2022 14:55:57 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments 2022 - Method Executed.
 15-09-2022 14:55:57:{Info} 15-09-2022 14:55:57 - FS_Helper.INSERTRECORDS - SPNAME -sp_Yearly_Royality 2022 - Method Executed.
+16-09-2022 13:06:16:{Info} 16-09-2022 13:06:16 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments 2022 - Method Executed.
+16-09-2022 13:06:34:{Info} 16-09-2022 13:06:34 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments 2022 - Method Executed.
+16-09-2022 13:07:21:{Info} 16-09-2022 13:07:21 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments 2022 - Method Executed.
+16-09-2022 13:10:54:{Info} 16-09-2022 13:10:54 - FS_Helper.INSERTRECORDS - SPNAME -Sp_Yearly_HallPayments 2022 - Method Executed.
+16-09-2022 13:11:00:{Info} 16-09-2022 13:11:00 - FS_Helper.INSERTRECORDS - SPNAME -sp_Yearly_Royality 2022 - Method Executed.

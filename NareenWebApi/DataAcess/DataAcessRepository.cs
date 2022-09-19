@@ -42,9 +42,9 @@ namespace NareenWebApi.DataAcess
                 YearlySummarry BS = new YearlySummarry();
                 BS.MonthName = ds3.Tables[0].Rows[i]["monthname"].ToString();
                 BS.MonthNumber = ds3.Tables[0].Rows[i]["number"].ToString();
-                BS.CreditAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["CreditAmt"].ToString());
-                BS.DebitAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["DebitAmt"].ToString());
-                BS.Diff = Convert.ToDecimal(ds3.Tables[0].Rows[i]["Diff"].ToString());
+                BS.CreditAmt = ds3.Tables[0].Rows[i]["CreditAmt"].ToString();
+                BS.DebitAmt = ds3.Tables[0].Rows[i]["DebitAmt"].ToString();
+                BS.Diff = ds3.Tables[0].Rows[i]["Diff"].ToString();
                 BSE.Add(BS);
             }
 
@@ -98,9 +98,9 @@ namespace NareenWebApi.DataAcess
                 BS.Name = ds3.Tables[0].Rows[i]["Name"].ToString();
                 BS.Date = Convert.ToDateTime(ds3.Tables[0].Rows[i]["Date"].ToString());
                 BS.Type = ds3.Tables[0].Rows[i]["Type"].ToString();
-                BS.CreditAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["CreditAmt"].ToString());
-                BS.DebitAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["DebitAmt"].ToString());
-                BS.Diff = Convert.ToDecimal(ds3.Tables[0].Rows[i]["Diff"].ToString());
+                BS.CreditAmt =  ds3.Tables[0].Rows[i]["CreditAmt"].ToString();
+                BS.DebitAmt =ds3.Tables[0].Rows[i]["DebitAmt"].ToString();
+                BS.Diff = ds3.Tables[0].Rows[i]["Diff"].ToString();
                 BSE.Add(BS);
             }
 
@@ -266,9 +266,9 @@ namespace NareenWebApi.DataAcess
                 BS.Name = ds3.Tables[0].Rows[i]["Name"].ToString();
                 BS.Date = Convert.ToDateTime(ds3.Tables[0].Rows[i]["Date"].ToString());
                 BS.Type = ds3.Tables[0].Rows[i]["Type"].ToString();
-                BS.CreditAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["CreditAmt"].ToString());
-                BS.DebitAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["DebitAmt"].ToString());
-                BS.Diff = Convert.ToDecimal(ds3.Tables[0].Rows[i]["Diff"].ToString());
+                BS.CreditAmt = ds3.Tables[0].Rows[i]["CreditAmt"].ToString();
+                BS.DebitAmt = ds3.Tables[0].Rows[i]["DebitAmt"].ToString();
+                BS.Diff = ds3.Tables[0].Rows[i]["Diff"].ToString();
 
                 BSE.Add(BS);
             }
@@ -293,9 +293,9 @@ namespace NareenWebApi.DataAcess
             for (int i = 0; i < ds3.Tables[0].Rows.Count; i++)
             {
                 MonthlyReport BS = new MonthlyReport();
-                BS.CreditAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["CreditAmt"].ToString());
-                BS.DebitAmt = Convert.ToDecimal(ds3.Tables[0].Rows[i]["DebitAmt"].ToString());
-                BS.Diff = Convert.ToDecimal(ds3.Tables[0].Rows[i]["Diff"].ToString());
+                BS.CreditAmt = ds3.Tables[0].Rows[i]["CreditAmt"].ToString();
+                BS.DebitAmt = ds3.Tables[0].Rows[i]["DebitAmt"].ToString();
+                BS.Diff =ds3.Tables[0].Rows[i]["Diff"].ToString();
 
                 BSE.Add(BS);
             }

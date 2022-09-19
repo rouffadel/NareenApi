@@ -10,14 +10,74 @@ namespace NareenWebApi.Dtos
     {
         public string DeviceId { get; set; }
     }
-    public class BalanceSheet
+
+
+    public class AmountMaster
+    {
+        private string _creditAmt = string.Empty;
+        public string CreditAmt
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_creditAmt))
+                {
+                    _creditAmt = "0";
+
+                }
+                return Convert.ToDouble(_creditAmt).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _creditAmt = value;
+            }
+        }
+
+
+        private string _debitAmt = string.Empty;
+        public string DebitAmt
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_debitAmt))
+                {
+                    _debitAmt = "0";
+
+                }
+                return Convert.ToDouble(_debitAmt).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _debitAmt = value;
+            }
+        }
+
+        private string _diffAmount = string.Empty;
+        public string Diff
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_diffAmount))
+                {
+                    _diffAmount = "0";
+
+                }
+                return Convert.ToDouble(_diffAmount).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _diffAmount = value;
+            }
+        }
+    }
+    public class BalanceSheet : AmountMaster
     {
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public String Type { get; set; }
-        public decimal CreditAmt { get; set; }
-        public decimal DebitAmt { get; set; }
-        public decimal Diff { get; set; }
+        
     }
     public class HallWiseCount
     {
@@ -58,13 +118,12 @@ namespace NareenWebApi.Dtos
         public decimal AdditionalAmount { get; set; }
         public string Muhurtham { get; set; }
     }
-    public class YearlySummarry
+    public class YearlySummarry : AmountMaster
     {
         public string MonthName { get; set; }
         public string MonthNumber { get; set; }
-        public decimal CreditAmt { get; set; }
-        public decimal DebitAmt { get; set; }
-        public decimal Diff { get; set; }
+
+        
     }
     public class BookingYearlySummarry
     {
@@ -72,33 +131,82 @@ namespace NareenWebApi.Dtos
         public string MonthNumber { get; set; }
         public int NoOfBookings { get; set; }
     }
-    public class MonthlyReport
+    public class MonthlyReport : AmountMaster
     {
 
-        public decimal CreditAmt { get; set; }
-        public decimal DebitAmt { get; set; }
-        public decimal Diff { get; set; }
+        
     }
     public class HallPayment
     {
-        public string TotalAmount { get; set; }
-        public string Collected { get; set; }
-        public string Balance { get; set; }
+        private string _totalAmount = string.Empty;
+        public string TotalAmount
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_totalAmount))
+                {
+                    _totalAmount = "0";
+
+                }
+                return Convert.ToDouble(_totalAmount).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _totalAmount = value;
+            }
+        }
+
+        private string _collected = string.Empty;
+        public string Collected
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_collected))
+                {
+                    _collected = "0";
+
+                }
+                return Convert.ToDouble(_collected).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _collected = value;
+            }
+        }
+
+        private string _balance = string.Empty;
+        public string Balance
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_balance))
+                {
+                    _balance = "0";
+
+                }
+                return Convert.ToDouble(_balance).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _balance = value;
+            }
+        }
     }
-    public class HallPaymentYearly
+    public class HallPaymentYearly : HallPayment
     {
         public string MonthName { get; set; }
-        public string TotalAmount { get; set; }
-        public string Collected { get; set; }
-        public string Balance { get; set; }
+        
     }
-    public class HallPaymentMonthly
+    public class HallPaymentMonthly : HallPayment
     {
         public string HallName { get; set; }
         public int HallId { get; set; }
-        public string TotalAmount { get; set; }
-        public string Collected { get; set; }
-        public string Balance { get; set; }
+        
+
+       
     }
     public class HallPaymentdetails
     {
@@ -143,7 +251,24 @@ namespace NareenWebApi.Dtos
     public class RoyalityPaymentYearly
     {
         public string MonthName { get; set; }
-        public string Amount_Received { get; set; }
+        private string _amountReceived = string.Empty;
+        public string Amount_Received
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_amountReceived))
+                {
+                    _amountReceived = "0";
+
+                }
+                return Convert.ToDouble(_amountReceived).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _amountReceived = value;
+            }
+        }
         public string Decoration { get; set; }
         public string CookingWater { get; set; }
         public string LandScape { get; set; }
@@ -158,7 +283,24 @@ namespace NareenWebApi.Dtos
     {
         public int HallId { get; set; }
         public string HallName { get; set; }
-        public string Amount_Received { get; set; }
+        private string _amountReceived = string.Empty;
+        public string Amount_Received
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_amountReceived))
+                {
+                    _amountReceived = "0";
+
+                }
+                return Convert.ToDouble(_amountReceived).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _amountReceived = value;
+            }
+        }
         public string Decoration { get; set; }
         public string CookingWater { get; set; }
         public string LandScape { get; set; }
@@ -172,7 +314,24 @@ namespace NareenWebApi.Dtos
     public class RoyalityPaymentdetails
     {
         public DateTime PaymentDate { get; set; }
-        public string Amount_Received { get; set; }
+
+        private string _amountReceived = string.Empty;
+        public string Amount_Received {
+            get
+            {
+                if (string.IsNullOrEmpty(_amountReceived))
+                {
+                    _amountReceived = "0";
+
+                }
+                return Convert.ToDouble(_amountReceived).ToString("N", new CultureInfo("hi-IN"));
+
+            }
+            set
+            {
+                _amountReceived = value;
+            }
+        }
         public string Decoration { get; set; }
         public string CookingWater { get; set; }
         public string LandScape { get; set; }

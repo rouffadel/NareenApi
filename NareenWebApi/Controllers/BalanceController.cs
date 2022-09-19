@@ -313,18 +313,18 @@ namespace NareenWebApi.Controllers
                 var payments = (List<HallPaymentYearly>)result;
                 
 
-                long hallamtCollected = 0;
-                long hallBalance = 0;
-                long royaltypayment = 0;
+                double hallamtCollected = 0;
+                double hallBalance = 0;
+                double royaltypayment = 0;
                 foreach (var item in payments)
                 {
-                   hallamtCollected += Int64.Parse(item.Collected);
-                   hallBalance += Int64.Parse(item.Balance);  
+                   hallamtCollected += Convert.ToDouble(item.Collected);
+                   hallBalance += Convert.ToDouble(item.Balance);  
                 }
                 var royalties = (List<RoyalityPaymentYearly>)_dataAcessRepository.GetRoyalityPaymentYearWise(DateTime.Now.Year);
                 foreach (var royalty in royalties)
                 {
-                    royaltypayment += Int64.Parse(royalty.Amount_Received);
+                    royaltypayment += Convert.ToDouble(royalty.Amount_Received);
                      
                 }
                 HallRotalityPayment hallRotalityPayment = new HallRotalityPayment();
